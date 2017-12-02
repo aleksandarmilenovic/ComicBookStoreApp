@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_height="80dp"
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="200dp"
     android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android" >
 
@@ -14,9 +15,68 @@
         android:layout_height="wrap_content"
         android:text="DEBUG"
         />
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:id="@+id/comic_list_item_godina"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/comic_list_item_name"
+        android:layout_centerHorizontal="true"
+        android:text="godina"
+        />
+
+    <TextView
+        android:layout_marginTop="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:id="@+id/comic_list_item_slika"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/comic_list_item_godina"
+        android:layout_centerHorizontal="true"
+        android:text="slika"
+         />
+
+    <TextView
+        android:layout_marginTop="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:id="@+id/comic_list_item_opis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/comic_list_item_slika"
+        android:layout_centerHorizontal="true"
+        android:text="opsi"
+        />
+
+    <TextView
+        android:layout_marginTop="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:id="@+id/comic_list_item_cena"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/comic_list_item_opis"
+        android:layout_centerHorizontal="true"
+        android:text="cena"
+        />
+
+    <Button
+        android:layout_marginTop="100dp"
+        android:layout_alignParentTop="true"
+        android:id="@+id/comic_list_item_kupi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/comic_list_item_cena"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:text="kupi"
+        />
 
     <ImageView
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="150dp"
         android:id="@+id/comic_list_item_cover"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

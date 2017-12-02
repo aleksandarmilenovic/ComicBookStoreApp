@@ -45,7 +45,7 @@ public class ComicListActivity extends AppCompatActivity{
         comics = new ArrayList<>();
 
         for (int i = 0; i < 30; i++){
-            comics.add(new Comic("Comic "+i));
+            comics.add(new Comic("Comic "+i,"SLIKA "+i,"GODINA "+i,"OPIS "+i,"CENA "+i));
         }
 
     }
