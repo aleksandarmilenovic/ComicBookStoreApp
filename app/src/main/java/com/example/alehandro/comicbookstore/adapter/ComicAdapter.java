@@ -11,8 +11,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.alehandro.comicbookstore.R;
+import com.example.alehandro.comicbookstore.callbacks.OnListButtonClickCallback;
 import com.example.alehandro.comicbookstore.model.Comic;
+import com.squareup.picasso.Picasso;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 
 /**
@@ -23,10 +26,14 @@ public class ComicAdapter extends RecyclerView.Adapter<ComicAdapter.ComicViewHol
 
     private static final String TAG = "ComicAdapter";
     private ArrayList<Comic> comics;
-    //private Context context;
+    private Context context;
+    private WeakReference<OnListButtonClickCallback> onListButtonClickCallback;
 
-    public ComicAdapter(ArrayList<Comic> comics, Context context){
+
+    public ComicAdapter(ArrayList<Comic> comics, Context context, OnListButtonClickCallback callback){
         this.comics = comics;
+        this.context = context;
+        onListButtonClickCallback = new WeakReference<OnListButtonClickCallback>(callback);
     }
 
     @Override
@@ -40,16 +47,17 @@ public class ComicAdapter extends RecyclerView.Adapter<ComicAdapter.ComicViewHol
     public void onBindViewHolder(ComicViewHolder holder, final int position) {
         holder.comicNameTextView.setText(comics.get(position).getName());
         holder.comicGodinaTextView.setText(comics.get(position).getGodina());
-        holder.comicSlikaTextView.setText(comics.get(position).getSlikaURL());
         holder.comicOpisTextView.setText(comics.get(position).getOpis());
         holder.comicCenaTextView.setText(comics.get(position).getCena());
         holder.comicKupiButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.v(TAG,comics.get(position).getName());
+                onListButtonClickCallback.get().onButtonClick(comics.get(position));
             }
         });
-        //holder.comicNameTextView.setText(comics.get(position).getCover());
+        Picasso.with(context).load(comics.get(position).getSlikaURL()).placeholder(R.mipmap.placeholder)
+                .error(R.mipmap.placeholder).into(holder.comicCoverImageView);
     }
 
     @Override
@@ -70,14 +78,12 @@ public class ComicAdapter extends RecyclerView.Adapter<ComicAdapter.ComicViewHol
         public ComicViewHolder(View view){
             super(view);
 
-            comicNameTextView = (TextView) view.findViewById(R.id.comic_list_item_name);
+            comicNameTextView = view.findViewById(R.id.comic_list_item_name);
             comicGodinaTextView = view.findViewById(R.id.comic_list_item_godina);
-            comicSlikaTextView = view.findViewById(R.id.comic_list_item_slika);
             comicOpisTextView = view.findViewById(R.id.comic_list_item_opis);
             comicCenaTextView = view.findViewById(R.id.comic_list_item_cena);
             comicKupiButton = view.findViewById(R.id.comic_list_item_kupi);
-
-            //     comicCoverImageView = (ImageView) view.findViewById(R.id.comic_list_item_cover);
+            comicCoverImageView = view.findViewById(R.id.comic_list_item_cover);
 
         }
     }
