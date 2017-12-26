@@ -11,6 +11,7 @@ public class Comic {
     private String godina;
     private String opis;
     private String cena;
+    private String comicbook;
 
     public Comic(String name, String slikaURL, String godina, String opis, String cena) {
         this.name = name;
@@ -58,5 +59,9 @@ public class Comic {
 
     public String getCena() {
         return cena;
+    }
+
+    public String getComicbook() {
+        return comicbook;
     }
 }

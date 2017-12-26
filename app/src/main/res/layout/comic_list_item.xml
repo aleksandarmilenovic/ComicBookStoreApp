@@ -7,7 +7,7 @@
     <TextView
         android:layout_marginTop="20dp"
         android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
         android:id="@+id/comic_list_item_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,7 +16,7 @@
 
     <TextView
 
-        android:layout_centerInParent="true"
+
         android:id="@+id/comic_list_item_godina"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,8 +27,6 @@
 
     <TextView
 
-
-        android:layout_centerInParent="true"
         android:id="@+id/comic_list_item_opis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,7 +37,7 @@
 
     <TextView
 
-        android:layout_centerInParent="true"
+
         android:id="@+id/comic_list_item_cena"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -53,7 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/comic_list_item_cena"
-        android:layout_centerInParent="true"
+
         android:layout_centerHorizontal="true"
         android:text="kupi"
         />
