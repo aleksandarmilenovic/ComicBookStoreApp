@@ -46,9 +46,9 @@ public class ComicAdapter extends RecyclerView.Adapter<ComicAdapter.ComicViewHol
     @Override
     public void onBindViewHolder(ComicViewHolder holder, final int position) {
         holder.comicNameTextView.setText(comics.get(position).getComicbook() == null ? "No name" : comics.get(position).getComicbook());
-        holder.comicGodinaTextView.setText(comics.get(position).getGodina());
-        holder.comicOpisTextView.setText("na");
-        holder.comicCenaTextView.setText("na");
+    //    holder.comicGodinaTextView.setText(comics.get(position).getGodina());
+    //    holder.comicOpisTextView.setText(comics.get(position).getOpis());
+    //    holder.comicCenaTextView.setText(comics.get(position).getGodina());
         holder.comicKupiButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,7 +56,7 @@ public class ComicAdapter extends RecyclerView.Adapter<ComicAdapter.ComicViewHol
                 onListButtonClickCallback.get().onButtonClick(comics.get(position));
             }
         });
-        Picasso.with(context).load("http://vignette4.wikia.nocookie.net/walkingdead/images/6/67/Volume_1-Days_Gone_Bye.jpg").placeholder(R.mipmap.placeholder)
+        Picasso.with(context).load(comics.get(position).getSlikaURL()).placeholder(R.mipmap.placeholder)
                 .error(R.mipmap.placeholder).into(holder.comicCoverImageView);
     }
 

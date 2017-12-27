@@ -5,6 +5,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <TextView
+        android:textColor="@color/colorYellow"
         android:layout_marginTop="20dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -15,35 +16,35 @@
         />
 
     <TextView
-
+        android:textColor="@color/colorYellow"
 
         android:id="@+id/comic_list_item_godina"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/comic_list_item_cover"
         android:layout_centerHorizontal="true"
-        android:text="godina"
+        android:text=""
          />
 
     <TextView
-
+        android:textColor="@color/colorYellow"
         android:id="@+id/comic_list_item_opis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/comic_list_item_godina"
         android:layout_centerHorizontal="true"
-        android:text="opsi"
+        android:text=""
         />
 
     <TextView
 
-
+        android:textColor="@color/colorYellow"
         android:id="@+id/comic_list_item_cena"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/comic_list_item_opis"
         android:layout_centerHorizontal="true"
-        android:text="cena"
+        android:text=""
         />
 
     <Button
@@ -65,6 +66,12 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@id/comic_list_item_name"
         android:layout_margin="20dp"
+        />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/comic_list_item_kupi"
+        android:background="@color/colorAccent"
         />
 
 

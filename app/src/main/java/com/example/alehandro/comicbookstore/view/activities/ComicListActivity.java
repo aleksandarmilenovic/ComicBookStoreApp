@@ -53,6 +53,7 @@ public class ComicListActivity extends AppCompatActivity{
     private OnListButtonClickCallback onListButtonClickCallback;
     private JSONParser jsonParser = new JSONParser();
     private String showURL = "http://igormedenica.com/raf/showComic.php";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -111,6 +112,8 @@ public class ComicListActivity extends AppCompatActivity{
             Intent intent = new Intent(ComicListActivity.this, ComicDetailsActivity.class);
             intent.putExtra(ComicDetailsActivity.COMIC_DETAILS_IMAGE_URL, comic.getSlikaURL());
             intent.putExtra(ComicDetailsActivity.COMIC_DEATILS_NAME, comic.getComicbook());
+            intent.putExtra(ComicDetailsActivity.COMIC_DETAILS_OPIS,comic.getOpis());
+            intent.putExtra(ComicDetailsActivity.COMIC_DETAILS_GODINA,comic.getGodina());
             //getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             startActivity(intent);
         }
@@ -150,7 +153,7 @@ public class ComicListActivity extends AppCompatActivity{
             Log.v("CL", comics.size()+"");
 
             for (int i = 0; i < comics.size(); i++){
-                Log.v("COMIC NAME", comics.get(i).getComicbook());
+                Log.v("COMIC NAME", comics.get(i).getSlikaURL());
             }
 
            // Log.e("XXX","ssssssssssssssssssssssssssssss");
